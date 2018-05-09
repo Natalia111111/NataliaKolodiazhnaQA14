@@ -1,4 +1,5 @@
 
+
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 
@@ -9,8 +10,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class FirstClass {
+public class Trello {
   private WebDriver driver;
+
 
 
   @BeforeClass(alwaysRun = true)
@@ -21,11 +23,17 @@ public class FirstClass {
   }
 
   @Test
-  public void searchWebDriverChrome() throws Exception {
+  public void testTrello() throws Exception {
     driver.get("https://www.google.com/");
     driver.findElement(By.id("lst-ib")).clear();
     driver.findElement(By.id("lst-ib")).sendKeys("webdriver");
     driver.findElement(By.id("lst-ib")).sendKeys(Keys.ENTER);
+    driver.findElement(By.id("lst-ib")).click();
+    driver.findElement(By.xpath("//div[@id='sbse0']/div/span/b")).click();
+    driver.findElement(By.linkText("Trello")).click();
+    driver.findElement(By.linkText("Войти")).click();
+    driver.findElement(By.xpath("//div[@id='google-link']/span[2]")).click();
+    driver.findElement(By.xpath("//div[@id='view_container']/form/div[2]/div/div/div/ul/li[2]/div/div[2]/p")).click();
   }
 
   @AfterClass(alwaysRun = true)
