@@ -1,25 +1,41 @@
 package com.telran.addressbook.model;
 
 public class GroupData {
-    private final String name;
-    private final String foter;
-    private final String header;
+    private  String name;
 
-    public GroupData(String name, String foter, String header) {
-        this.name = name;
-        this.foter = foter;
-        this.header = header;
+    private  String header;
+    private String footer;
+
+    public GroupData withFooter(String footer) {
+        this.footer = footer;
+        return this;
     }
+
+    public GroupData withHeader(String header) {
+        this.header = header;
+        return this;
+    }
+
+    public GroupData withName(String name) {
+        this.name = name;
+        return this;
+
+
+    }
+
+
 
     public String getName() {
         return name;
     }
 
-    public String getFoter() {
-        return foter;
-    }
-
     public String getHeader() {
         return header;
     }
+    public String getFooter() {
+        return footer;
+    }
+
+
+
 }
