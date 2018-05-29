@@ -30,14 +30,14 @@ public class ContactHelper extends HelperBase {
 
 
     public void initContactCreation() {
-        driver.findElement(By.xpath("//*[contains(text(),'add new')]"));
+        driver.findElement(By.xpath("//*[contains(text(),'add new')]")).click();;
 
     }
 
 
 
     public void returnContactPage() {
-        driver.findElement(By.linkText("\"//*[contains(text(),'home')]\")")).click();
+        driver.findElement(By.xpath("//*[contains(text(),'home')]")).click();
     }
 
     public void submitContactCreation() {
@@ -50,9 +50,9 @@ public class ContactHelper extends HelperBase {
         typeC(By.name("lastname"), contactData.getLName());
 
 
-        driver.findElement(By.name("new_group")).click();
-        new Select(driver.findElement(By.name("new_group"))).selectByVisibleText("QA14");
-        driver.findElement(By.name("new_group")).click();
+      //  driver.findElement(By.name("new_group")).click();
+       // new Select(driver.findElement(By.name("new_group"))).selectByVisibleText("QA14");
+        //driver.findElement(By.name("new_group")).click();
 
         typeC(By.name("home"), contactData.getTel());
 

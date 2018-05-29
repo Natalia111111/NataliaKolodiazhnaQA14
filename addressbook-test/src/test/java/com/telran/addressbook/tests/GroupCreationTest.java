@@ -12,7 +12,7 @@ public class GroupCreationTest extends TestBase{
 
 
 
-  @Test (priority=1)
+  @Test (priority=2)
   public void testGroupCreationLongname(){
     appl.getNavigationHelper().gotogrouppage();
     int before= appl.getGroupHelper().getGroupCount();
@@ -25,7 +25,7 @@ public class GroupCreationTest extends TestBase{
     Assert.assertEquals(after, before+1);
   }
 
-  @Test  (priority = 2)
+  @Test  (priority = 1)
   public void testGroupCreationShortname(){
 
     appl.getNavigationHelper().gotogrouppage();
@@ -40,15 +40,16 @@ public class GroupCreationTest extends TestBase{
     Assert.assertEquals(after, before+1);
   }
 
-  @Test
+  @Test (priority = 3)
   public void testGroupCreation()  {
     appl.getNavigationHelper().gotogrouppage();
     int before = appl.getGroupHelper().getGroupCount();
        appl.getGroupHelper().initgroupcreation();
     appl.getGroupHelper().Fillgroupform(new GroupData()
+            .withName("g")
             .withHeader("nat")
-            .withFooter("hjj")
-            .withName("g"));
+            .withFooter("hjj"));
+
 
     appl.getGroupHelper().SubmitGroupCreation();
     appl.getGroupHelper().returnToGroupPage();

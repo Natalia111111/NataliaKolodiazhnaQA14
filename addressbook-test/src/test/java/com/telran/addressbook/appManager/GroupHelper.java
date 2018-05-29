@@ -31,7 +31,7 @@ public class GroupHelper extends HelperBase {
 
         type(By.name("group_header"), groupData.getHeader());
 
-        type(By.name("group_foter"), groupData.getFooter());
+        type(By.name("group_footer"), groupData.getFooter());
 
 
     }

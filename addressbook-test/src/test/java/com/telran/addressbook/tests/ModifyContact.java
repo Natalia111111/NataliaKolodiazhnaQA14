@@ -7,11 +7,9 @@ import org.testng.annotations.Test;
 public class ModifyContact extends  TestBase {
     @Test
     public void ContactCreationTest() {
-        appl.getContactHelper().initContactCreation();
-        appl.getContactHelper().fillContactForm(new ContactData());
-
         appl.getNavigationHelper().goToContactPage();
-        int before = appl.getContactHelper().getContactCount();
+        appl.getContactHelper().fillContactForm(new ContactData());
+               int before = appl.getContactHelper().getContactCount();
         appl.getContactHelper().initContactCreation();
 
         appl.getContactHelper().submitContactModification();

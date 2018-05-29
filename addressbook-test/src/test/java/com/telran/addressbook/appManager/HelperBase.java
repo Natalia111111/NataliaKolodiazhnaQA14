@@ -51,7 +51,13 @@ public class HelperBase {
 
     }
 
+
     public void click(String s) {
         click(name(s));
     }
+
 }
+
+
+
+

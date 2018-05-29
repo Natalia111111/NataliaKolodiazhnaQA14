@@ -18,7 +18,8 @@ public class NavigationHelper extends HelperBase {
       click(By.linkText("groups"));
     }
     public void goToContactPage() {
-        driver.findElement(By.linkText("groups")).click();
+        driver.findElement(By.xpath("//*[contains(text(),'home')]")).click();
+
     }
 }
 

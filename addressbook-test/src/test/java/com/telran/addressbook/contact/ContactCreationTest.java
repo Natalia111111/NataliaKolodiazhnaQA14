@@ -8,14 +8,15 @@ public class ContactCreationTest extends TestBase {
 
     @Test
     public void ContactCreationTest() {
+        appl.getNavigationHelper().goToContactPage();
+        int before = appl.getContactHelper().getContactCount();
         appl.getContactHelper().initContactCreation();
+
         appl.getContactHelper().fillContactForm(new ContactData().setFname("Masha")
                 .setLName("Sor")
                 .setAdd("ghh").setTel("025"));
 
-        appl.getNavigationHelper().goToContactPage();
-        int before = appl.getContactHelper().getContactCount();
-        appl.getContactHelper().initContactCreation();
+
 
         appl.getContactHelper().submitContactCreation();
         appl.getContactHelper().returnContactPage();
